@@ -26,8 +26,7 @@ RARITIES = ["Common", "Uncommon", "Epic", "Legendary", "Mythical", "Divine", "Li
 PRICE_COLUMNS = {"silver": "silver_price", "gold": "gold_price", "diamond": "diamond_price"}
 
 app = FastAPI(title="AnimeCharacterGrabber Market")
-app.mount("/static", StaticFiles(directory=str(BASE_DIR / "miniapp")), name="static")
-
+app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 def connect():
     c = sqlite3.connect(DB_PATH, timeout=30)
@@ -73,7 +72,7 @@ def current_user(x_telegram_init_data: str = Header(default="")) -> dict:
 
 @app.get("/", response_class=HTMLResponse)
 def home():
-    return FileResponse(BASE_DIR / "miniapp" / "index.html")
+    return FileResponse(BASE_DIR / "static" / "index.html")
 
 
 @app.get("/api/me")
