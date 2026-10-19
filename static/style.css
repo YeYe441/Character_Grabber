@@ -1,0 +1,203 @@
+:root {
+color-scheme: dark;
+--background: #11111b;
+--panel: #1c1c2b;
+--border: #35354c;
+--text: #f5f5ff;
+--muted: #aaaac4;
+--accent: #9b7cff;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+padding: 16px;
+background: var(--background);
+color: var(--text);
+font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+padding: 20px 16px;
+text-align: center;
+background: linear-gradient(135deg, #30204d, #17172a);
+border: 1px solid var(--border);
+border-radius: 18px;
+}
+
+header h1 {
+margin: 0;
+font-size: 25px;
+}
+
+header p {
+color: var(--muted);
+margin-bottom: 0;
+}
+
+main {
+max-width: 850px;
+margin: 0 auto;
+}
+
+h2 {
+margin-top: 26px;
+font-size: 19px;
+}
+
+.wallet {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 8px;
+margin-top: 16px;
+}
+
+.wallet span {
+padding: 12px 5px;
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 12px;
+text-align: center;
+font-size: 12px;
+}
+
+#rarities {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+button,
+select,
+input {
+font: inherit;
+}
+
+button {
+border: 1px solid var(--border);
+border-radius: 10px;
+padding: 10px 13px;
+background: var(--panel);
+color: var(--text);
+cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+outline: 2px solid var(--accent);
+outline-offset: 2px;
+}
+
+#rarities button.active,
+#filterButton {
+background: var(--accent);
+color: #171322;
+border-color: var(--accent);
+font-weight: 700;
+}
+
+.filters {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 20px;
+padding: 14px;
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 14px;
+}
+
+.filters label {
+width: 100%;
+color: var(--muted);
+font-size: 14px;
+}
+
+input,
+select {
+min-width: 0;
+padding: 10px;
+color: var(--text);
+background: var(--background);
+border: 1px solid var(--border);
+border-radius: 9px;
+}
+
+#budget {
+flex: 1;
+width: 100px;
+}
+
+#currency {
+width: 115px;
+}
+
+#status {
+color: var(--muted);
+margin: 20px 0 12px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+}
+
+.character {
+min-width: 0;
+overflow: hidden;
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 14px;
+}
+
+.character img {
+display: block;
+width: 100%;
+aspect-ratio: 4 / 5;
+object-fit: cover;
+background: #26263a;
+}
+
+.character-info {
+padding: 11px;
+}
+
+.character h3 {
+margin: 0 0 7px;
+font-size: 15px;
+overflow-wrap: anywhere;
+}
+
+.character p {
+margin: 5px 0;
+color: var(--muted);
+font-size: 13px;
+}
+
+.character button {
+width: 100%;
+margin-top: 8px;
+background: #29243d;
+}
+
+.empty {
+grid-column: 1 / -1;
+padding: 25px 10px;
+text-align: center;
+color: var(--muted);
+}
+
+@media (min-width: 600px) {
+.grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wallet span {
+font-size: 14px;
+}
+}
