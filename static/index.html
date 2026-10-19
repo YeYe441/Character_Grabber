@@ -1,9 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-    <title>Anime Character Market</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151522">
+  <title>Anime Character Market</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <h1>Anime Character Market</h1>
-</body>
+  <header>
+    <h1>🎴 Anime Market</h1>
+    <p>Find your next favorite character!</p >
+  </header>  <main>
+    <section class="wallet">
+      <span>🪙 Silver: <b id="silver">—</b></span>
+      <span>🥇 Gold: <b id="gold">—</b></span>
+      <span>💎 Diamond: <b id="diamond">—</b></span>
+    </section><h2>Choose Rarity</h2>
+<nav id="rarities" aria-label="Character rarity">
+  <button class="active" data-rarity="All">All</button>
+  <button data-rarity="Common">Common</button>
+  <button data-rarity="Uncommon">Uncommon</button>
+  <button data-rarity="Epic">Epic</button>
+  <button data-rarity="Legendary">Legendary</button>
+  <button data-rarity="Mythical">Mythical</button>
+  <button data-rarity="Divine">Divine</button>
+  <button data-rarity="Limited">Limited</button>
+  <button data-rarity="Customization">Customization</button>
+</nav>
+
+<section class="filters">
+  <label for="budget">Maximum price</label>
+  <input id="budget" type="number" min="0" placeholder="Enter your budget">
+  <select id="currency" aria-label="Currency">
+    <option value="silver">Silver</option>
+    <option value="gold">Gold</option>
+    <option value="diamond">Diamond</option>
+  </select>
+  <button id="filterButton">Apply filter</button>
+  <button id="resetButton">Reset</button>
+</section>
+
+<p id="status" role="status">Connecting to market…</p >
+<section id="characters" class="grid" aria-live="polite"></section>
+
+  </main>  <script src="/static/app.js"></script></body>
 </html>
